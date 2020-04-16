@@ -1,25 +1,23 @@
 <?php
-get_header();
-?>
+    get_header();
+    ?>
+    
+		<article class="content px-3 py-5 p-md-5">
 
-<div id="layout" class="pure-g">
-    <div class="content pure-u-1 pure-u-mid-3-4">
-<?php
-if (have_posts()):
-    while (have_posts()) : the_post();
-    the_title();
-    the_content();
-endwhile;
-else:
-    _e('No posts');
-endif;
-?>
-</div>
-</div>
+		<?php
+		if (have_posts()) :
+			while (have_posts()) : the_post();
+			
+			get_template_part('template-parts/content','article');
+		endwhile;
+	endif;
+			?>
+	    </article>
+	 
 
-<?php
-
-get_footer();
-
-?>
+    <?php
+		get_footer();
+    ?>
+    
+     
 
